@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ftorre/ftorre-gateway-api.git"
+    "url": "git+https://github.com/ofmendez/ftorre-gateway-api.git"
   },
   "keywords": [
     "ftorre"
@@ -17,9 +17,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ftorre/ftorre-gateway-api/issues"
+    "url": "https://github.com/ofmendez/ftorre-gateway-api/issues"
   },
-  "homepage": "https://github.com/ftorre/ftorre-gateway-api#readme",
+  "homepage": "https://github.com/ofmendez/ftorre-gateway-api#readme",
   "dependencies": {
     "axios": "^0.19.2",
     "config": "^3.3.1",
