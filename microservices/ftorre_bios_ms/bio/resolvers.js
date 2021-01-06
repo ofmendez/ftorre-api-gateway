@@ -11,15 +11,15 @@ const resolvers = {
 		getBio:(_, { username }, context) =>
 			generalRequest(context, `${URLq}/${username}`, 'GET'),
 		},
-		Mutation: {
-			findBio: (_, { size, offset, aggregate, term }, context) =>{
-				let body = {"name":{"term": term}};
-				let query = "";
-					query += `size=`+(size? `${size}` : `0`);
-					query += `&offset=`+(offset? `${offset}` : `0`);
-					query += `&aggregate=`+(aggregate? `${aggregate}` : `false`);
-				return generalRequest(context, `${URLm}/?${query}`, 'POST', body );
-			}
+	Mutation: {
+		findBio: (_, { size, offset, aggregate, term }, context) =>{
+			let body = {"name":{"term": term}};
+			let query = "";
+				query += `size=`+(size? `${size}` : `0`);
+				query += `&offset=`+(offset? `${offset}` : `0`);
+				query += `&aggregate=`+(aggregate? `${aggregate}` : `false`);
+			return generalRequest(context, `${URLm}/?${query}`, 'POST', body );
+		}
 	}
 }
 

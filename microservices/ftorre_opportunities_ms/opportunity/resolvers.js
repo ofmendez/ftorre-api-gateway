@@ -3,23 +3,25 @@
 const { generalRequest } = require('../../../utils/schema');
 const config = require('config');
 
-const URLq = `${config.microservices.ftorre_bios_ms.server.url}${config.microservices.ftorre_bios_ms.server.baseUrl}`;
-const URLm = `${config.microservices.ftorre_people_search_ms.server.url}${config.microservices.ftorre_people_search_ms.server.baseUrl}`;
+const URLq = `${config.microservices.ftorre_opportunities_ms.server.url}${config.microservices.ftorre_opportunities_ms.server.baseUrl}`;
+const URLm = `${config.microservices.ftorre_opportunities_search_ms.server.url}${config.microservices.ftorre_opportunities_search_ms.server.baseUrl}`;
 
 const resolvers = {
 	Query: {
-		getBio:(_, { username }, context) =>
-			generalRequest(context, `${URLq}/${username}`, 'GET'),
+		getOpportunity:(_, { id }, context) =>{
+			console.log(`${URLq}/${id}`);
+			return generalRequest(context, `${URLq}/${id}`, 'GET');
+		}
 		},
-		Mutation: {
-			findBio: (_, { size, offset, aggregate, term }, context) =>{
-				let body = {"name":{"term": term}};
-				let query = "";
-					query += `size=`+(size? `${size}` : `0`);
-					query += `&offset=`+(offset? `${offset}` : `0`);
-					query += `&aggregate=`+(aggregate? `${aggregate}` : `false`);
-				return generalRequest(context, `${URLm}/?${query}`, 'POST', body );
-			}
+	Mutation: {
+		findOpportunity: (_, { size, offset, aggregate, term }, context) =>{
+			let body = {"skill/role":{"text":term ,"experience":"potential-to-develop"}};
+			let query = "";
+				query += `size=`+(size? `${size}` : `0`);
+				query += `&offset=`+(offset? `${offset}` : `0`);
+				query += `&aggregate=`+(aggregate? `${aggregate}` : `false`);
+			return generalRequest(context, `${URLm}/?${query}`, 'POST', body );
+		}
 	}
 }
 

@@ -6,22 +6,22 @@
 				"baseUrl": "/api/bios"
 			}
 		},
+		"ftorre_people_search_ms": {
+			"server": {
+				"url": "FTORRE_PEOPLE_SEARCH_MS",
+				"baseUrl": "/people/_search"
+			}
+		},
 		"ftorre_opportunities_ms": {
 			"server": {
 				"url": "FTORRE_OPPORTUNITIES_MS",
-				"baseUrl": "api/opportunities"
+				"baseUrl": "/api/opportunities"
 			}
 		},
 		"ftorre_opportunities_search_ms": {
 			"server": {
 				"url": "FTORRE_OPPORTUNITIES_SEARCH_MS",
 				"baseUrl": "/opportunities/_search"
-			}
-		},
-		"ftorre_people_search_ms": {
-			"server": {
-				"url": "FTORRE_PEOPLE_SEARCH_MS",
-				"baseUrl": "/people/_search"
 			}
 		},
 		"ftorre_example_ms": {

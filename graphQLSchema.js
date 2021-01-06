@@ -15,15 +15,15 @@ const mergedTypeDefs = schema.merge(
 	[
 		'scalar JSON',
 		bios.typeDefs,
-		// opportunity.typeDefs,
+		opportunity.typeDefs,
 	],
 	[
 		bios.queries,
-		// opportunity.queries,
+		opportunity.queries,
 	],
 	[
 		bios.mutations,
-		// opportunity.mutations,
+		opportunity.mutations,
 	]
 );
 
@@ -33,6 +33,6 @@ module.exports = makeExecutableSchema({
 	resolvers: merge(
 		{ JSON: GraphQLJSON }, // allows scalar JSON
 		bios.resolvers,
-		// opportunity.resolvers,
+		opportunity.resolvers,
 	)
 });

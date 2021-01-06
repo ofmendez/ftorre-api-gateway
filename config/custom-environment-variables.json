@@ -15,7 +15,7 @@
 		"ftorre_opportunities_ms": {
 			"server": {
 				"url": "FTORRE_OPPORTUNITIES_MS",
-				"baseUrl": "api/opportunities"
+				"baseUrl": "/api/opportunities"
 			}
 		},
 		"ftorre_opportunities_search_ms": {

@@ -2,50 +2,63 @@
 		// publicId: String
 		// username: String
 const typeDefs = `
-	type Bio {
-		person: Person
-		strengths: [Strength]
-		interests: [Interest]
+	type Opportunity {
+		id: String
+		objective: String
+		details: [Detail]
+		created: String
+		deadline: String
+		status: String
+		organizations: [Organization]
+		compensation: Compensation
 	}
 
-	type Strength{
+	type OpportunityB {
+		id: String
+		objective: String
+		deadline: String
+		status: String
+		organizations: [Organization]
+		compensation: CompensationB
+	}
+
+	type Detail{
+		code: String
+		content: String
+	}
+
+	type CompensationB{
+		data: Compensation
+	}
+
+	type Compensation{
+        currency: String
+        minAmount: Int
+        maxAmount: Int
+        periodicity: String
+	}
+
+	type Organization{
 		id: String
 		name: String
-	}
-
-	type Interest{
-		id: String
-		name: String
-	}
-
-	type Person{
-		professionalHeadline: String
 		picture: String
-		name: String
 	}
 
-	type Search{
-		offset: Int,
-		results: [Person]
-		size: Int,
+
+	type SearchOrg{
+		offset: Int
+		results: [OpportunityB]
+		size: Int
 		total: Int
 	}
-
-	type Result{
-		name: String
-		locationName: String
-		picture: String
-	}
-
-
 `
 
 const queries = `
-	getBio(username: String): Bio
+	getOpportunity(id: String): Opportunity
 `
 
 const mutations = `
-	findBio(size: Int, offset: Int, aggregate: Boolean, term: String): Search
+	findOpportunity(size: Int, offset: Int, aggregate: Boolean, term: String): SearchOrg
 `
 
 module.exports = {
